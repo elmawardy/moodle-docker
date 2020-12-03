@@ -41,7 +41,8 @@ php72-php-redis \
 php72-php-opcache \
 php-redis \
 unzip && \
-sed -i 's/apache/nginx/g' /etc/opt/remi/php72/php-fpm.d/www.conf
+sed -i 's/apache/nginx/g' /etc/opt/remi/php72/php-fpm.d/www.conf && \
+sed -i 's/default_server/ /g' /etc/nginx/nginx.conf
 
 COPY ./moodle /var/www/html/moodle/www
 RUN chown -R nginx:nginx /var/www/html/moodle
