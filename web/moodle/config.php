@@ -6,7 +6,7 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = '172.17.0.4';
+$CFG->dbhost    = 'moodle-db';
 $CFG->dbname    = 'moodle';
 $CFG->dbuser    = 'postgres';
 $CFG->dbpass    = '123456';

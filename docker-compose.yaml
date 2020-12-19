@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  moodle-db:
+    image: gcr.io/geotags-295219/moodle-db:1.0
+    ports:
+      - "5432:5432"
+  moodle-web:
+    image: gcr.io/geotags-295219/moodle-web:1.0
+    depends_on:
+      - moodle-db
+    ports:
+      - "80:80"

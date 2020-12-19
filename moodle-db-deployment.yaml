@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: moodle-db
+  name: moodle-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: moodle-db
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: moodle-db
+    spec:
+      containers:
+      - image: gcr.io/geotags-295219/moodle-db:1.0
+        imagePullPolicy: ""
+        name: moodle-db
+        ports:
+        - containerPort: 5432
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
